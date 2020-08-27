@@ -106,17 +106,13 @@
             <!--END MAINMENU AREA END-->
         </div>
         <div class="welcome-area">
-            <div class="area-bg"></div>
+            <div class="welcome-area-bg"></div>
             <div class="container">
                 <div class="row flex-v-center">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="welcome-text text-center">
-                            <h2>Contact Us</h2>
-                            <ul class="page-location">
-                                <li><a href="#">Home</a></li>
-                                <li>/</li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
+                            <h1>Successfully Sent</h1>
+                            
                         </div>
                     </div>
                 </div>
@@ -124,80 +120,41 @@
         </div>
     </header>
     <!--END TOP AREA-->
+<?php 
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
 
-    <!--CONTACT US AREA-->
-    <section class="contact-area" id="contact">
-        <div class="map-area relative">
-            <div id="map" style="width: 100%; height: 400px;"> </div>
-        </div>
-        <div class="contact-form-area section-padding gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="area-title text-center">
-                            <h3>GET IN TOUCH</h3>
-                            <p>Need any help jusct send a message via our email address</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-                        <div class="contact-form">
-                            <form action="message.php"  method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="name-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control" name="name" placeholder="Name.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="email-field">
-                                            <div class="form-input">
-                                                <input type="email" class="form-control"  name="email" placeholder="Email.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="phone-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control"  name="phone" placeholder="Subject..">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="message-field">
-                                            <div class="form-input">
-                                                <textarea class="form-control" rows="6"  name="message" placeholder="Your Message Here..." required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <button name="submit" type="submit">Send</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="contact-image text-center">
-                            <img src="img/slider/service-01.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--CONTACT US AREA END-->
+        
+       
+        $to = "info@husseinhassan.org";
+        $subject ="Email from Website. Subjects is: ".$subject;
+        $message ="My Name is : ".$name. " of Email: ".$email." and Tel". $tel." The Following is my message: ".$message;
+        $headers ="From: ".$email;
+         if(mail($to,$subject,$message,$headers)){
+            
+          echo " <b>Message Sent. Thank You $name  for your Message.<b>";
+}
+
+else {
+    echo "Not Sent";
+    
+}
+
+       
+
+
+    }
+    else
+    {
+        echo "try again";
+    }
+
+ ?>
+
 
     <!--FOOER AREA-->
     <div class="footer-area dark-bg">
@@ -320,3 +277,5 @@
 </body>
 
 </html>
+
+
