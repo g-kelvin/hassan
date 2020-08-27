@@ -221,10 +221,24 @@
                 <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                     <div class="quote-form-area wow fadeIn">
                         <h3>Contact Us</h3>
-                        <form class="quote-form" action="#">
+                        <form class="quote-form" action="inquiry.php" method="post">
                             <p class="width-full">
-                                <input type="text" name="name" id="name" placeholder="Your Name">
+                                <input type="text" name="name" placeholder="Your Name">
                             </p>
+
+                            <p> <div class="col-lg-6">
+                                    <div class="form-group row">
+                                            <p style="color: white">Salutation</p>
+                                            <select name="salutation" required id="" class="form-control">
+                                                <option value="">-select-</option>
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mr">Mrs</option>
+                                                <option value="Mr">Ms</option>
+                                            </select>
+                                    </div>
+                                </div></p>
+
+
                             <p class="width-half">
                                 <input type="email" name="email" id="email" placeholder="Email">
                                 <input class="pull-right" type="phone" name="phone" id="phone" placeholder="Phone">
