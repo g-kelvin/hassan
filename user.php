@@ -158,7 +158,7 @@ else {
  ?>
 
 
-    <!--FOOER AREA-->
+ <!--FOOER AREA-->
     <div class="footer-area dark-bg">
         <div class="footer-area-bg"></div>
        <br>
@@ -190,7 +190,7 @@ else {
                                 <li>
                                     <div class="twitter-icon"><i class="fa fa-phone"></i></div>
                                     <div class="tweet-detail">
-                                        <p>Enrollment to classes is ongoing. <a href="register.html" style="color: red">registration</a> is on..</p>
+                                        <p>Enrollment to classes is ongoing. <a href="/register" style="color: red">registration</a> is on..</p>
                                         <a href="#" class="tweet-meta" style="color: orange">5 Miniutes Ago</a>
                                     </div>
                                 </li>
@@ -221,6 +221,12 @@ else {
                                 <li><a href="#"><img src="img/instafeed/5.jpg" alt=""></a></li>
                                 <li><a href="#"><img src="img/instafeed/6.jpg" alt=""></a></li>
                             </ul>
+                            <p>
+                                
+                                Youtube: Hussein Hassan Safeway <br>
+                                Facebook @hussein Hassan <br>
+                                Twitter @husseinsafeway<br>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -279,5 +285,4 @@ else {
 </body>
 
 </html>
-
 
