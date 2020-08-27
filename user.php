@@ -106,17 +106,13 @@
             <!--END MAINMENU AREA END-->
         </div>
         <div class="welcome-area">
-            <div class="area-bg"></div>
+            <div class="welcome-area-bg"></div>
             <div class="container">
                 <div class="row flex-v-center">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="welcome-text text-center">
-                            <h2>Client Registration Portal</h2>
-                            <ul class="page-location">
-                                <li><a href="#">Home</a></li>
-                                <li>/</li>
-                                <li><a href="#">Register</a></li>
-                            </ul>
+                            <h1>Successfully Sent</h1>
+                            
                         </div>
                     </div>
                 </div>
@@ -125,112 +121,42 @@
     </header>
     <!--END TOP AREA-->
 
-    <!--CONTACT US AREA-->
-    <section class="contact-area" id="contact">
-        <div class="map-area relative">
-            <div id="map" style="width: 100%; height: 400px;"> </div>
-        </div>
-        <div class="contact-form-area section-padding gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="area-title text-center">
-                            <h3>Register With Us</h3>
-                            <p>Register to our Database to access our services</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-                        <div class="contact-form">
-                            <form action="user.php"  method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="name-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control" name="name" placeholder="Name.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="email-field">
-                                            <div class="form-input">
-                                                <input type="email" class="form-control"  name="email" placeholder="Email.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<?php 
+    if(isset($_POST['submit'])){
+       $name = $_POST['name'];
+        $service = $_POST['service'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+
+        
+       
+        $to = "info@husseinhassan.org";
+        $subject ="Registration Email of: ".$service ." Email subject is: ".$subject;
+        $message ="My Name is : ".$name. " of Email: ".$email." and Telephone". $tel." The Following is my message: ".$message;
+        $headers ="From: ".$email;
+         if(mail($to,$subject,$message,$headers)){
+            
+          echo " <b>Message Sent. Thank You $name  for your Message.<b>";
+}
+
+else {
+    echo "Not Sent";
+    
+}
+
+       
 
 
-                                 <div class="row">
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="name-field">
-                                            <div class="form-input">
-                                                 </p>
+    }
+    else
+    {
+        echo "try again";
+    }
 
-                            
-                                          
-                                            <select name="service"  class="form-control">
-                                                <option value="">-select Service-</option>
-                                                <option value="Masterminding">Masterminding</option>
-                                                <option value="Group Coaching">Group Coaching</option>
-                                                <option value="One on One Coaching">One on One Coaching</option>
-                                                <option value="Conflict Resolution">Conflict Resolution</option>
-                                                <option value="Team Development">Team Development</option>
-                                            </select>
-                                   
-                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="email-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control"  name="tel" placeholder="Telephone.." required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+ ?>
 
-
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="phone-field">
-                                            <div class="form-input">
-                                                <input type="text" class="form-control"  name="subject" placeholder="Subject..">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group" id="message-field">
-                                            <div class="form-input">
-                                                <textarea class="form-control" rows="6"  name="message" placeholder="Your Message Here..." required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <button name="submit" type="submit">Send</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                        <div class="contact-image text-center">
-                            <img src="img/slider/service-01.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--CONTACT US AREA END-->
 
     <!--FOOER AREA-->
     <div class="footer-area dark-bg">
@@ -353,3 +279,5 @@
 </body>
 
 </html>
+
+
