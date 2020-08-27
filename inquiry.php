@@ -123,9 +123,9 @@
 <?php 
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
+        $service = $_POST['service'];
         $email = $_POST['email'];
-        $tel = $_POST['tel'];
-        $subject = $_POST['subject'];
+        $phone = $_POST['phone'];
         $message = $_POST['message'];
 
         
